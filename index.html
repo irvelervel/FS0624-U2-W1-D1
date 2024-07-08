@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Media Queries & Responsive Design</title>
+    <style>
+      /* CSS GENERICO, PER IL MOBILE */
+      #first,
+      #second {
+        width: 200px;
+        height: 200px;
+        border: 2px solid black;
+      }
+
+      #first {
+        margin-bottom: 2em;
+      }
+
+      /* ora applichiamo delle regole che verranno renderizzate su schermi
+      via via più grandi, grazie alla media queries */
+      @media screen and (min-width: 300px) {
+        /* qui dentro scriviamo altri coppie selettore: regola */
+        #first {
+          background-color: red;
+        }
+
+        #second {
+          background-color: blue;
+        }
+      }
+
+      @media screen and (min-width: 500px) and (orientation: portrait) {
+        #first,
+        #second {
+          width: 400px;
+          height: 400px;
+          background-color: green;
+        }
+      }
+
+      @media print {
+        #first,
+        #second {
+          display: none;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <h1>Impariamo ad usare le media queries :)</h1>
+      <article>
+        <div id="first"></div>
+        <div id="second"></div>
+      </article>
+    </main>
+  </body>
+</html>
